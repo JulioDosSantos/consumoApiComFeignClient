@@ -15,27 +15,22 @@ public class PostService {
 	private PostFeignClient postFeignClient;
 
 	public List<Post> findAll() {
-		System.out.println("findAll");
 		return postFeignClient.findAll();
 	}
 
 	public Post findById(String id) {
-		System.out.println("findById");
 		return postFeignClient.findById(id);
 	}
 
 	public Post save(Post post) {
-		System.out.println("save");
 		return postFeignClient.save(post);
 	}
 
 	public Post edit(Post post) {
-		System.out.println("edit");
 		return postFeignClient.edit(String.valueOf(post.getId()), post);
 	}
 
 	public void delete(String id) {
-		System.out.println("edit");
 		postFeignClient.delete(id);
 		
 	}
